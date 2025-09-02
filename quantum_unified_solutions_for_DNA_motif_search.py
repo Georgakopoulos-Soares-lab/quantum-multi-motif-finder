@@ -5,7 +5,7 @@ from collections import defaultdict
 # Qiskit
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile
 from qiskit.circuit import Instruction
-from qiskit.circuit.library import StatePreparation    # <-- NEW: unitary state prep
+from qiskit.circuit.library import StatePreparation    
 from qiskit_aer import AerSimulator
 
 #helpers/utilities
