@@ -70,7 +70,7 @@ def prepare_address_superposition(qc: QuantumCircuit, addr: QuantumRegister, S: 
         qc.append(prep, addr)
         cost.inc('state_prep_unitary')
 
-# Diffuser on a register (explicit MCX/H)
+#Diffuser on a register (explicit MCX/H)
 def diffuser_on_register(qc: QuantumCircuit, reg: QuantumRegister, cost: CostTracker,
                          anc: Optional[QuantumRegister] = None):
     """Standard Grover diffuser on a register (MCX/H explicit)."""
@@ -152,22 +152,22 @@ def qram_pattern_query_demo(qc: QuantumCircuit, patterns: List[str], L: int,
     m = len(patterns)
     for j, pat in enumerate(patterns):
         bits = format(j, f'0{len(pid)}b')[::-1]
-        # Select pid == j
+        #select pid == j
         for qb, b in zip(pid, bits):
             if b == '0':
                 op_x(qc, qb, cost)
-        # Write pattern bits
+        # write pattern bits
         pbits = pattern_bits_2L(pat)
         for k, b in enumerate(pbits):
             if b == 1:
                 op_mcx(qc, list(pid), pdat[k], cost, anc)
-        # Unselect
+        #unselect
         for qb, b in zip(pid, bits):
             if b == '0':
                 op_x(qc, qb, cost)
     cost.add('demo_qram_pattern_ops', m * L)
 
-#THEORY: opaque QRAM gates
+#theory: opaque QRAM gates - the readiness effort
 def append_qram_text_opaque(qc: QuantumCircuit, idx: QuantumRegister, data: QuantumRegister,
                             L: int, cost: CostTracker):
     instr = opaque_instruction('qram_text_query', num_qubits=len(idx) + len(data), params=[L])
@@ -201,9 +201,9 @@ def oracle_enumerate_patterns(qc: QuantumCircuit,
         for k, b in enumerate(pbits):
             if b == 0:
                 op_x(qc, data[k], cost)
-        # Flip match if all ones
+        #Flip match if all ones
         op_mcx(qc, list(data), match[0], cost, anc)
-        # Uncompute
+        #Uncompute
         for k, b in enumerate(pbits):
             if b == 0:
                 op_x(qc, data[k], cost)
@@ -286,14 +286,14 @@ def build_qram_inner_grover_circuit(text: str,
     n_idx = max(1, ceil(log2(S)))
     n_pid = max(1, ceil(log2(max(1, m))))
 
-    # Registers
+    #Registers
     idx = QuantumRegister(n_idx, 'idx')
     data = QuantumRegister(2 * L, 'data')
     pid = QuantumRegister(n_pid, 'pid')
     pdat = QuantumRegister(2 * L, 'pdat')
     match = QuantumRegister(1, 'match')
 
-    # Ancillas: need enough for diffusers and equality anc_eq (2L)
+    #Ancillas:need enough for diffusers and equality anc_eq (2L)
     anc_size = 2 * L + max(0, max(n_idx, n_pid) - 2) if use_ancillas else 0
     anc = QuantumRegister(anc_size, 'anc') if anc_size > 0 else None
     creg = ClassicalRegister(n_idx, 'c')
@@ -301,21 +301,21 @@ def build_qram_inner_grover_circuit(text: str,
     regs = [idx, data, pid, pdat, match] + ([anc] if anc is not None else []) + [creg]
     qc = QuantumCircuit(*regs, name=f"InnerGrover_{qram_mode}")
 
-    # Address superposition and uniform over pid
+    #address superposition and uniform over pid
     prepare_address_superposition(qc, idx, S, cost)
     for q in pid:
         op_h(qc, q, cost)
 
-    # |match> = |->
+    #|match> = |->
     op_x(qc, match[0], cost)
     op_h(qc, match[0], cost)
 
-    # Determine inner iters if not given: ~ ceil((π/4) √m)
+    #determine inner iters if not given: ~ ceil((π/4) √m)
     if inner_iters is None:
         inner_iters = max(1, int(np.ceil((pi / 4.0) * np.sqrt(max(1, m)))))
     cost.add('inner_iters', inner_iters)
 
-    # Slice anc into 2L comparator ancillas + rest for MCX recursion
+    #Slice anc into 2L comparator ancillas + rest for MCX recursion
     def anc_view(start, end):
         return [anc[i] for i in range(start, end)] if anc is not None and end <= len(anc) else None
 
@@ -329,7 +329,7 @@ def build_qram_inner_grover_circuit(text: str,
         else:
             qram_text_query_demo(qc, text, L, idx, data, anc, cost)
 
-        # Inner Grover over pid
+        #Inner Grover over pid
         for _ in range(inner_iters):
             # Load pattern by pid
             if qram_mode == 'opaque':
@@ -337,20 +337,20 @@ def build_qram_inner_grover_circuit(text: str,
             else:
                 qram_pattern_query_demo(qc, patterns, L, pid, pdat, anc, cost)
 
-            # Inner oracle: flip 'match' iff data == pdat (explicit comparator)
+            #Inner oracle: flip 'match' iff data == pdat (explicit comparator)
             equality_flip_on_match(qc, data, pdat, match[0], cost, anc_eq=anc_eq, anc=anc_rest)
             cost.inc('inner_oracle_equality_calls')
 
-            # Unquery pattern to make the inner oracle phase-only
+            #unquery pattern to make the inner oracle phase-only
             if qram_mode == 'opaque':
                 append_qram_pattern_opaque(qc, pid, pdat, L, cost)
             else:
                 qram_pattern_query_demo(qc, patterns, L, pid, pdat, anc, cost)
 
-            # Inner diffuser on pid (explicit)
+            #Inner diffuser on pid (explicit)
             diffuser_on_register(qc, pid, cost, anc=anc_rest)
 
-        # Uncompute: unload substring
+        #uncompute: unload substring
         if qram_mode == 'opaque':
             append_qram_text_unquery_opaque(qc, idx, data, L, cost)
         else:
@@ -362,7 +362,7 @@ def build_qram_inner_grover_circuit(text: str,
     qc.measure(idx, creg)
     return qc, cost.snapshot()
 
-#DEMO Execution
+#demo Execution
 def simulate_demo_circuit(qc: QuantumCircuit, shots: int = 2048) -> Dict[str, int]:
     """Simulate the given quantum circuit using Qiskit AerSimulator and return the measurement counts."""
     sim = AerSimulator(method="automatic")
