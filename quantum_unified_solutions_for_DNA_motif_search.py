@@ -55,7 +55,7 @@ def op_mcx(qc: QuantumCircuit, ctrls, tgt, cost: CostTracker, anc: Optional[Quan
         qc.mcx(list(ctrls), tgt)
     cost.inc('mcx')
 
-#state preparation on address (unitary only)
+#state preparation on address (unitary)
 def prepare_address_superposition(qc: QuantumCircuit, addr: QuantumRegister, S: int, cost: CostTracker):
     """Prepare uniform superposition over first S states of addr (unitary)."""
     n_idx = len(addr)
