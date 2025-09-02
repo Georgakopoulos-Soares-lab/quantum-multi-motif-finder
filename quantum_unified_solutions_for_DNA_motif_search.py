@@ -92,7 +92,7 @@ def diffuser_on_register(qc: QuantumCircuit, reg: QuantumRegister, cost: CostTra
     for q in reg:
         op_h(qc, q, cost)
 
-#equality test: data == pdat (explicit, non-opaque)
+#equality test / data == pdat (explicit, non-opaque)
 def equality_flip_on_match(qc: QuantumCircuit,
                            data: QuantumRegister,
                            pdat: QuantumRegister,
@@ -235,13 +235,13 @@ def build_qram_enumerate_m_circuit(text: str,
     regs = [idx, data, match] + ([anc] if anc is not None else []) + [creg]
     qc = QuantumCircuit(*regs, name=f"EnumerateM_{qram_mode}")
 
-    # Init address superposition and |-> match
+    #init address superposition and |-> match
     prepare_address_superposition(qc, idx, S, cost)
     op_x(qc, match[0], cost)
     op_h(qc, match[0], cost)
 
     for _ in range(outer_iters):
-        # Compute: load substring into data
+        #compute: load substring into data
         if qram_mode == 'opaque':
             append_qram_text_opaque(qc, idx, data, L, cost)
         elif qram_mode == 'demo':
@@ -249,16 +249,16 @@ def build_qram_enumerate_m_circuit(text: str,
         else:
             raise ValueError("qram_mode must be 'opaque' or 'demo'")
 
-        # Oracle (enumerate patterns)
+        #Oracle (enumerate patterns)
         oracle_enumerate_patterns(qc, data, match, patterns, L, cost, anc)
 
-        # Uncompute: remove the text data
+        #uncompute: remove the text data
         if qram_mode == 'opaque':
             append_qram_text_unquery_opaque(qc, idx, data, L, cost)
         else:
             qram_text_query_demo(qc, text, L, idx, data, anc, cost)  # self-inverse
 
-        # Diffuser on idx (explicit)
+        #Diffuser on idx (explicit)
         diffuser_on_register(qc, idx, cost, anc)
 
     qc.measure(idx, creg)
@@ -378,7 +378,7 @@ if __name__ == "__main__":
     outer_iters = 1  # for toy sizes
     shots = 1024
 
-    print("\nideal QRAM: Enumerate-m")
+    print("\nideal QRAM:Enumerate-m")
     qc_theory_enum, cost_theory_enum = build_qram_enumerate_m_circuit(
         text, patterns, L, outer_iters=2, qram_mode='opaque')
     print(qc_theory_enum)
