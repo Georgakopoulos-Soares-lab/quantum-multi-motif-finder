@@ -103,19 +103,22 @@ Developed by the Georgakopoulos-Soares Lab as part of ongoing research into quan
 
 ---
 
-## 📜 License
-This project is released under the MIT License. See LICENSE for details.
-
-🎓 Research & Educational Purpose
+## 🎓 Research & Educational Purpose
 The code and examples here are intended for research and educational purposes only:
 - To demonstrate how quantum computing concepts can be applied to bioinformatics.
 - To serve as a starting point for further exploration, benchmarking, and refinement.
 - To encourage collaboration between quantum computing researchers and computational biologists.
+
 ⚠️ Note: This is not a production-ready tool for genomic analysis. Instead, it is a proof-of-concept designed to highlight the potential of quantum-enhanced approaches in motif search tasks.
 
 ---
 
-🤝 Contributing
+## 📜 License
+This project is released under the MIT License. See LICENSE for details.
+
+---
+
+## 🤝 Contributing
 We welcome and encourage contributions from the community!
 If you’d like to improve the code, add new features, or extend the research, please feel free to:
 - Fork the repository
