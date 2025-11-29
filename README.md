@@ -11,7 +11,7 @@ The algorithms are designed to accelerate DNA motif search tasks, which are cent
 - [📂 Repository Contents](#-repository-contents)
 - [⚙️ Dependencies](#️-dependencies)
 - [▶️ Running the Script](#️-running-the-script)
-- [🧩 Usage Demonstration](#-worked-example)
+- [🧩 Usage Demonstration](#-usage-demonstration)
 - [👩‍🔬 Authors](#-authors)
 - [📜 License](#-license)
 - [🎓 Research & Educational Purpose](#-research--educational-purpose)
