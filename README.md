@@ -65,11 +65,15 @@ pip install qiskit numpy scipy
 
 ## ▶️ Running the Script
 Clone the repository:
+```bash
 git clone https://github.com/Georgakopoulos-Soares-lab/quantum-multi-motif-finder.git
 cd quantum-multi-motif-finder
+```
 
 Run the main script:
+```python
 python quantum_unified_solutions_for_DNA_motif_search.py
+```
 
 ---
 
