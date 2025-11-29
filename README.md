@@ -11,7 +11,7 @@ The algorithms are designed to accelerate DNA motif search tasks, which are cent
 - [📂 Repository Contents](#-repository-contents)
 - [⚙️ Dependencies](#️-dependencies)
 - [▶️ Running the Script](#️-running-the-script)
-- [🧪 Worked Example](#-worked-example)
+- [🧩 Usage Demonstration](#-worked-example)
 - [👩‍🔬 Authors](#-authors)
 - [📜 License](#-license)
 - [🎓 Research & Educational Purpose](#-research--educational-purpose)
@@ -77,7 +77,7 @@ python quantum_unified_solutions_for_DNA_motif_search.py
 
 ---
 
-## 🧪 Worked Example
+## 🧩 Usage Demonstration
 Inside the script, you can define your DNA sequence and motifs. For example:
 
 ```python
