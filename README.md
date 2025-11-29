@@ -75,6 +75,8 @@ python quantum_unified_solutions_for_DNA_motif_search.py
 
 ## 🧪 Worked Example
 Inside the script, you can define your DNA sequence and motifs. For example:
+
+```python
 # Example DNA sequence
 text = "ATCGTACGTAGCTAGCTAGCTAGCTA"
 
@@ -83,6 +85,7 @@ patterns = ["ATCG", "TAGC", "GCTA"]
 
 # Choose algorithm: "enumerate" or "nested"
 algorithm = "nested"
+```
 
 When you run the script, it will:
 - Load the DNA sequence into QRAM.
