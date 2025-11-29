@@ -6,6 +6,19 @@ The algorithms are designed to accelerate DNA motif search tasks, which are cent
 
 ---
 
+## 📑 Table of Contents
+- [📖 Introduction](#-introduction)
+- [📂 Repository Contents](#-repository-contents)
+- [⚙️ Dependencies](#️-dependencies)
+- [▶️ Running the Script](#️-running-the-script)
+- [🧪 Worked Example](#-worked-example)
+- [👩‍🔬 Authors](#-authors)
+- [📜 License](#-license)
+- [🎓 Research & Educational Purpose](#-research--educational-purpose)
+- [🤝 Contributing](#-contributing)
+
+---
+
 ## 📖 Introduction
 
 DNA motif search is a fundamental problem in bioinformatics, where the goal is to detect multiple short patterns (k-mers) within long DNA sequences. Classical algorithms can be computationally expensive when scaling to large datasets.  
@@ -50,16 +63,16 @@ pip install qiskit numpy scipy
 ---
 
 ## ▶️ Running the Script
-```Clone the repository:
+Clone the repository:
 git clone https://github.com/Georgakopoulos-Soares-lab/quantum-multi-motif-finder.git
 cd quantum-multi-motif-finder
 
-```Run the main script:
+Run the main script:
 python quantum_unified_solutions_for_DNA_motif_search.py
 
 ---
 
-### Worked Example
+## 🧪 Worked Example
 Inside the script, you can define your DNA sequence and motifs. For example:
 # Example DNA sequence
 text = "ATCGTACGTAGCTAGCTAGCTAGCTA"
@@ -69,7 +82,6 @@ patterns = ["ATCG", "TAGC", "GCTA"]
 
 # Choose algorithm: "enumerate" or "nested"
 algorithm = "nested"
-
 
 When you run the script, it will:
 - Load the DNA sequence into QRAM.
@@ -83,35 +95,34 @@ Motif 'GCTA' found at positions: [16, 20]
 
 This demonstrates how the quantum algorithm detects multiple motifs efficiently.
 
-👩‍🔬 Authors
+---
+
+## 👩‍🔬 Authors
 Developed by the Georgakopoulos-Soares Lab as part of ongoing research into quantum algorithms for computational biology.
-
-📜 License
-This project is released under the MIT License. See LICENSE for details.
-
-The code and examples here are intended for **research and educational purposes only**:
-- To demonstrate how quantum computing concepts can be applied to bioinformatics.  
-- To serve as a starting point for further exploration, benchmarking, and refinement.  
-- To encourage collaboration between quantum computing researchers and computational biologists.  
-
-⚠️ **Note:** This is not a production-ready tool for genomic analysis. Instead, it is a proof-of-concept designed to highlight the potential of quantum-enhanced approaches in motif search tasks.
 
 ---
 
-## 🤝 Contributing
+## 📜 License
+This project is released under the MIT License. See LICENSE for details.
 
-We welcome and encourage contributions from the community!  
+🎓 Research & Educational Purpose
+The code and examples here are intended for research and educational purposes only:
+- To demonstrate how quantum computing concepts can be applied to bioinformatics.
+- To serve as a starting point for further exploration, benchmarking, and refinement.
+- To encourage collaboration between quantum computing researchers and computational biologists.
+⚠️ Note: This is not a production-ready tool for genomic analysis. Instead, it is a proof-of-concept designed to highlight the potential of quantum-enhanced approaches in motif search tasks.
 
+---
+
+🤝 Contributing
+We welcome and encourage contributions from the community!
 If you’d like to improve the code, add new features, or extend the research, please feel free to:
-
-1. **Fork** the repository  
-2. **Create a branch** for your feature or fix  
-3. **Commit** your changes  
-4. **Open a Pull Request** describing your contribution  
-
-All contributions — whether bug fixes, documentation, or new algorithmic ideas — help strengthen this project as a foundation for quantum-enhanced DNA motif search.  
-
-Please ensure that your contributions align with the **research and educational purpose** of this project. Constructive feedback, discussions, and suggestions are also highly valued.
+- Fork the repository
+- Create a branch for your feature or fix
+- Commit your changes
+- Open a Pull Request describing your contribution
+All contributions — whether bug fixes, documentation, or new algorithmic ideas — help strengthen this project as a foundation for quantum-enhanced DNA motif search.
+Please ensure that your contributions align with the research and educational purpose of this project. Constructive feedback, discussions, and suggestions are also highly valued.
 
 Thank you in advance!
 
