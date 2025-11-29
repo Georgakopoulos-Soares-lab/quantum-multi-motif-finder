@@ -59,6 +59,7 @@ Install dependencies via:
 
 ```bash
 pip install qiskit numpy scipy
+```
 
 ---
 
