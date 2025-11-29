@@ -15,6 +15,7 @@ The algorithms are designed to accelerate DNA motif search tasks, which are cent
 - [👩‍🔬 Authors](#-authors)
 - [📜 License](#-license)
 - [🎓 Research & Educational Purpose](#-research--educational-purpose)
+- [📚 Publication](#-publication)
 - [🤝 Contributing](#-contributing)
 
 ---
@@ -127,6 +128,11 @@ This project is released under the MIT License. See LICENSE for details.
 
 ---
 
+## 📚 Publication
+TBA
+
+---
+
 ## 🤝 Contributing
 We welcome and encourage contributions from the community!
 If you’d like to improve the code, add new features, or extend the research, please feel free to:
@@ -137,6 +143,6 @@ If you’d like to improve the code, add new features, or extend the research, p
 All contributions — whether bug fixes, documentation, or new algorithmic ideas — help strengthen this project as a foundation for quantum-enhanced DNA motif search.
 Please ensure that your contributions align with the research and educational purpose of this project. Constructive feedback, discussions, and suggestions are also highly valued.
 
-Thank you in advance!
+Thank you! 
 
 ---
