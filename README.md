@@ -95,11 +95,13 @@ When you run the script, it will:
 - Load the DNA sequence into QRAM.
 - Apply Grover’s search using the chosen algorithm.
 - Print out the positions where motifs are detected.
+```bash
 Sample Output:
 Running Nested Grover Search...
 Motif 'ATCG' found at positions: [0]
 Motif 'TAGC' found at positions: [8, 12]
 Motif 'GCTA' found at positions: [16, 20]
+```
 
 This demonstrates how the quantum algorithm detects multiple motifs efficiently.
 
