@@ -12,7 +12,7 @@ The algorithms are designed to accelerate DNA motif search tasks, which are cent
 - [⚙️ Dependencies](#️-dependencies)
 - [▶️ Running the Script](#️-running-the-script)
 - [🧩 Usage Demonstration](#-usage-demonstration)
-- [👩‍🔬 Authors](#-authors)
+- [🧠 Authors](#-authors)
 - [📜 License](#-license)
 - [🎓 Purpose of This Repository](#-purpose-of-this-repository)
 - [📚 Publication](#-publication)
@@ -108,7 +108,7 @@ This demonstrates how the quantum algorithm detects multiple motifs efficiently.
 
 ---
 
-## 👩‍🔬 Authors
+## 🧠 Authors
 Developed by the Georgakopoulos-Soares Lab as part of ongoing research into quantum algorithms for computational biology.
 
 ---
