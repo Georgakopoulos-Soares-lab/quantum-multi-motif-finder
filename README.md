@@ -119,7 +119,7 @@ The code and examples provided here are designed to support ongoing research and
 - Illustrate how quantum computing techniques can be applied to computational biology challenges.
 - Foster collaboration between quantum computing practitioners and researchers in genomics and related fields.
 
-⚠️ Note: While current demonstrations run on a quantum simulator due to the limited availability of large‑scale quantum hardware, the underlying algorithms are built with future quantum systems in mind. They are designed as production‑ready algorithms that can run on fully scaled quantum hardware without requiring changes, and can be executed on real quantum devices as soon as sufficiently capable systems become available. For now, this repository serves as a practical proof‑of‑concept showcasing the potential of quantum‑enhanced approaches for motif search tasks.
+⚠️ Note: While current demonstrations run on a quantum simulator due to the limited availability of large‑scale quantum hardware, the algorithms in this repository are engineered with future quantum systems in mind. They are designed as production‑ready algorithms that can run on fully scaled quantum hardware without requiring changes, and can be executed on real quantum devices as soon as sufficiently capable systems become available. For now, this repository serves as a practical proof‑of‑concept showcasing the potential of quantum‑enhanced approaches for motif search tasks.
 
 ---
 
