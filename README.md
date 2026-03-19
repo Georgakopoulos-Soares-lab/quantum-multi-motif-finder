@@ -14,7 +14,7 @@ The algorithms are designed to accelerate DNA motif search tasks, which are cent
 - [🧩 Usage Demonstration](#-usage-demonstration)
 - [👩‍🔬 Authors](#-authors)
 - [📜 License](#-license)
-- [🎓 Research & Educational Purpose](#-research--educational-purpose)
+- [🎓 Purpose of This Repository](#-purpose-of-this-repository)
 - [📚 Publication](#-publication)
 - [🤝 Contributing](#-contributing)
 
@@ -113,13 +113,13 @@ Developed by the Georgakopoulos-Soares Lab as part of ongoing research into quan
 
 ---
 
-## 🎓 Research & Educational Purpose
-The code and examples here are intended for research and educational purposes only:
-- To demonstrate how quantum computing concepts can be applied to bioinformatics.
-- To serve as a starting point for further exploration, benchmarking, and refinement.
-- To encourage collaboration between quantum computing researchers and computational biologists.
+## 🎓 Purpose of This Repository
+The code and examples provided here are designed to support ongoing research and learning in the emerging intersection of quantum computing and bioinformatics. They aim to:
 
-⚠️ Note: This is not a production-ready tool for genomic analysis. Instead, it is a proof-of-concept designed to highlight the potential of quantum-enhanced approaches in motif search tasks.
+- Illustrate how quantum computing techniques can be applied to computational biology challenges.
+- Foster collaboration between quantum computing practitioners and researchers in genomics and related fields.
+
+⚠️ Note: While current demonstrations run on a quantum simulator due to the limited availability of large‑scale quantum hardware, the underlying algorithms are built with future quantum systems in mind. They are designed as production‑ready algorithms that can run on fully scaled quantum hardware without requiring changes, and can be executed on real quantum devices as soon as sufficiently capable systems become available. For now, this repository serves as a practical proof‑of‑concept showcasing the potential of quantum‑enhanced approaches for motif search tasks.
 
 ---
 
