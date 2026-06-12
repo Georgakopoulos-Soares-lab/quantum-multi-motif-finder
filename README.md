@@ -130,7 +130,7 @@ This project is released under the MIT License. See LICENSE for details.
 
 ## 📚 Publication
 If you use the algorithms or concepts presented in this work, please cite:
-Papalitsas C, Mouratidis I, Patsakis M, Stogiannos E, Georgakopoulos-Soares I and Koulouras G (2026) A foundational quantum framework for multi-pattern string matching in k-mer detection. Front. Bioinform. 6:1802517. doi: 10.3389/fbinf.2026.1802517
+Papalitsas C, Mouratidis I, Patsakis M, Stogiannos E, Georgakopoulos-Soares I and Koulouras G (2026) A foundational quantum framework for multi-pattern string matching in k-mer detection. Front. Bioinform. 6:1802517. doi: [10.3389/fbinf.2026.1802517](https://doi.org/10.3389/fbinf.2026.1802517)
 
 ---
 
